@@ -11,11 +11,13 @@ function getHumanChoice() {
 }
 
 function playGame() {
+    /* Loops playRound for 5 rounds */
     /* score */
     let humanScore = 0;
     let computerScore = 0;
     while (humanScore < 5 || computeScore < 5) {
         (function playRound(humanChoice, computerChoice) {
+            /* Runs a single round */
             humanChoice = getHumanChoice();
             computerChoice = getComputerChoice();
             console.log(humanChoice, computerChoice);
@@ -30,19 +32,29 @@ function playGame() {
                 );
             } else if (humanChoice == 'rock' && computerChoice == 'scissors') {
                 humanScore++;
-                window.alert(`Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Win! Rock beats Scissors.`);
+                window.alert(
+                    `Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Win! Rock beats Scissors.`,
+                );
             } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
                 computerScore++;
-                window.alert(`Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Lose! Scissors beats Paper.`);
+                window.alert(
+                    `Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Lose! Scissors beats Paper.`,
+                );
             } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
                 humanScore++;
-                window.alert(`Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Win! Scissors beats Paper.`);
+                window.alert(
+                    `Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Win! Scissors beats Paper.`,
+                );
             } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
                 computerScore++;
-                window.alert(`Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Lose! Rock beats Scissors.`);
+                window.alert(
+                    `Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Lose! Rock beats Scissors.`,
+                );
             } else if (humanChoice == 'paper' && computerChoice == 'rock') {
                 humanScore++;
-                window.alert(`Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Win! Paper beats Rock.`);
+                window.alert(
+                    `Your Score: ${humanScore} Computer's Score: ${computerScore}\nYou Win! Paper beats Rock.`,
+                );
             } else {
                 window.alert(`Check spelling: \n${humanChoice}`);
             }
@@ -50,4 +62,4 @@ function playGame() {
     }
 }
 
-playGame()
+playGame();
