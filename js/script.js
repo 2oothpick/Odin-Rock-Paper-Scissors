@@ -20,7 +20,7 @@ function playGame () {
   /* score */
   let humanScore = 0;
   let computerScore = 0;
-  while (humanScore < 5 || computerScore < 5) {
+  while ((humanScore < 5) && (computerScore < 5)) {
     (function playRound (humanChoice, computerChoice) {
       /* Runs a single round */
       humanChoice = getHumanChoice();
